@@ -1,0 +1,75 @@
+[root@appserver ~]# uname -a 
+Linux appserver 2.6.32-754.9.1.el6.x86_64 #1 SMP Wed Nov 21 15:08:21 EST 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+
+
+
+[root@redhat1 ~]# uname -a
+Linux redhat1 2.6.32-754.10.1.el6.x86_64 #1 SMP Thu Nov 29 15:44:01 EST 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+
+
+[root@dbserver ~]# uname -a
+Linux dbserver 2.6.32-754.9.1.el6.x86_64 #1 SMP Wed Nov 21 15:08:21 EST 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+
+crating users;
+[harishforyou_c@redhat1 ~]$ sudo su - 
+[root@redhat1 ~]# 
+[root@redhat1 ~]# 
+[root@redhat1 ~]# useradd -d /home/ansadmin -m ansadmin
+[root@redhat1 ~]# passwd ansadmin 
+Changing password for user ansadmin.
+New password: 
+BAD PASSWORD: it is based on a dictionary word
+BAD PASSWORD: is too simple
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@redhat1 ~]# 
+[root@redhat1 ~]# 
+[root@redhat1 ~]# passwd -x -l ansadmin
+passwd: bad argument -l: invalid numeric value
+[root@redhat1 ~]# passwd -x -1 ansadmin
+Adjusting aging data for user ansadmin.
+passwd: Success
+[root@redhat1 ~]# 
+
+ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+32:a9:f4:bd:1f:4d:27:08:07:1f:56:47:8c:ac:6e:73 root@redhat1
+The key's randomart image is:
++--[ RSA 2048]----+
+|        . oo.+o  |
+|         + .o..  |
+|        . o.     |
+|       . o..     |
+|    . + S.. o .  |
+|   . o +  +oEo   |
+|    . . ...o.    |
+|         . .     |
+|        ...      |
++-----------------+
+[root@redhat1 ~]# 
+[root@redhat1 ~]# cat /root/.ssh/id_rsa.pub.
+cat: /root/.ssh/id_rsa.pub.: No such file or directory
+[root@redhat1 ~]# 
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA5nwlfN6EF45AVHwdp3AOGDgtAbx3tYZJq7qEuuYtM3pgiguDWVpr4EM/2CI3DI0/og7b3OJB612cCRCQiOYHcHZA7cxK0Lf1NvNRh8nLshBB+pql9DS5Nk4Ywe3Ikp1F4hRzOVUYYyR
+aicpDexxMedNYOkLY8jJ74HVvl7Slr5uGqJOSa8QiGaL6grubUZhri+NKmC4T4hs5u7OJ2BQM6VrBx6dxqsd2tu7+iL5P7gSL686ZPxaIQJ9rpK0xEpkKpX8V686Ug5P9s1KkNkpydkwC5lVBhMd6NKZDu3O8JUF/nlJNsb3DrZIXy7
+dgKNIIY4BPQsbrzS+8+0r0P6Jp6Q== ansadmin@redhat1
+
+34.73.158.184  redhat1 
+34.73.67.151  dbserver
+34.73.4.125   appserver
+
+10.142.0.3   dbserver
+10.142.0.4   appserver
+10.142.0.2   redhat1

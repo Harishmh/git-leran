@@ -1,0 +1,33 @@
+PNR NO: 4351533760
+
+
+sudo ifconfig | grep inet
+IP Address	 :	10.142.0.2
+
+To enable epel-
+## RHEL/CentOS 7 64-Bit ##
+# wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+# rpm -ivh epel-release-latest-7.noarch.rpm
+
+sudo yum install ansible -y
+
+ansible --version
+
+[harishforyou_c@redhat1 ~]$ ansible --version
+ansible 2.6.8
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/harishforyou_c/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.6/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.6.6 (r266:84292, Aug  9 2016, 06:11:56) [GCC 4.4.7 20120313 (Red Hat 4.4.7-17)]
+
+  let we create a SSH key using below command and copy the key to remote hosts.
+
+ ssh-keygen -t rsa -b 4096 -C "harishforyou_c@redhat1"
+
+https://www.udemy.com 
+
+User ID: dineshkb@gmail.com
+
+Password: Welcom1e!
+
