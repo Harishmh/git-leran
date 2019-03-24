@@ -1,11 +1,10 @@
 PNR NO: 4351533760
-
-
+this is adde line
 sudo ifconfig | grep inet
 IP Address	 :	10.142.0.2
 
 To enable epel-
-## RHEL/CentOS 7 64-Bit ##
+## RHEL/CentOS 7 64-Bit ## 
 # wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 # rpm -ivh epel-release-latest-7.noarch.rpm
 
